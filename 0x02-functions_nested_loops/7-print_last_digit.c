@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include "main.h"
 /**
- * _abs - Computes the absolute value of an integer.
+ * print_last_digit - Computes the absolute value of an integer.
  * @n: The integer to compute the absolute value of.
  *
  * Return: The absolute value of the integer.
@@ -19,7 +19,7 @@ int print_last_digit(int n)
 
 	_putchar(last_digit + 48);
 
-	return last_digit;
+	return (last_digit);
 
 }
 
