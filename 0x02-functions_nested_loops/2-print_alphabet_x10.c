@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_alphabet - Prints the lowercase alphabet using _putchar
+ * print_alphabet_x10 - Prints the lowercase alphabet using _putchar
  *
  * Return: void
  */
