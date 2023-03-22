@@ -10,6 +10,6 @@
 int _abs(int ab)
 {
 	double a = abs(ab);
-	printf("%a",a);
+	printf("%d",a);
 }
 
