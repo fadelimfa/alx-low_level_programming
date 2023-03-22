@@ -8,6 +8,9 @@
 /* betty style doc for function main goes there */
 #include "main.h"
 void print_alphabet(void)
+/*
+ * print_alphabet is a function
+ */
 {
 	char c;
 
