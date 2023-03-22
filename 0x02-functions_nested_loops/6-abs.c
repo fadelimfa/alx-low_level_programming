@@ -12,4 +12,12 @@ int _abs(n)
     int abs(n);
     return (0);
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+int _abs(n) {
+    int abs_num = abs(n);
+    printf("%d\n", abs_num);
+    return 0;
+}
 
