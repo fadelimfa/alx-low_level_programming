@@ -7,16 +7,18 @@
  */
 /* betty style doc for function main goes there */
 #include "main.h"
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet(void){
-		char letter = 'a';
-		while (letter <= 'z') {
-			putchar(letter);
-			letter++;
-		}
-		putchar('\n');
+	char c;
+
+	for (c = 'a'; c <= 'z'; c++)
+	{
+		_putchar(c);
 	}
-	print_alphabet();
-	return (0);
+
+	_putchar('\n');
 }
+
+
+
+
