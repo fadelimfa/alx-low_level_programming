@@ -6,10 +6,10 @@
  * Return: 0
  */
 /* betty style doc for function main goes there */
+#include "main.h"
 int main(void)
-#include <main.h>
 {
-	puts (print());
+	printf("_putchar\n");
 	return (0);
 }
 

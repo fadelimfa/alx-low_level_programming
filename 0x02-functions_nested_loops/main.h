@@ -1,5 +1,6 @@
-int print(void)
-{
-	printf("_putchar\n");
-	return (0);
-}
+#ifndef MAIN_H
+#define MAIN_H
+
+int main(void);
+
+#endif /* MAIN_H */
