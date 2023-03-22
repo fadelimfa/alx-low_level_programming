@@ -1,4 +1,7 @@
-void print_alphabet(void){
+#ifndef MAIN_H
+#define MAIN_H
+
+print_alphabet(void){
 	char letter = 'a';
 	while (letter <= 'z') {
 		putchar(letter);
@@ -6,4 +9,4 @@ void print_alphabet(void){
 	}
 	putchar('\n');
 }
-
+#endif /* MAIN_H */
