@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include "main.h"
 /**
- * _isalpha - Prints if alphabet or not
- * @c: is the variable
+ * print_sign - Prints if alphabet or not
+ * @n: is the variable
  * Return: 0 or 1
  */
 int print_sign(int n)
@@ -18,7 +18,8 @@ int print_sign(int n)
 	{
 		_putchar('-');
 		return (-1);
-	}else
+	}
+	else
 	{
 		_putchar('0');
 		return (0);
