@@ -7,7 +7,7 @@
  * @n: is the variable
  * Return: 0 or 1
  */
-int _abs(int n)
+int _abs(n)
 {
     int abs (n);
     return (0);
