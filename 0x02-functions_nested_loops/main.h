@@ -1,12 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-print_alphabet(void){
-	char letter = 'a';
-	while (letter <= 'z') {
-		putchar(letter);
-		letter++;
-	}
-	putchar('\n');
-}
+#include <stdio.h>
+
+void print_alphabet(void);
+
 #endif /* MAIN_H */
