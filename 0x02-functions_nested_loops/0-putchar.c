@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 /* more headers goes there */
 /**
@@ -8,8 +7,9 @@
  */
 /* betty style doc for function main goes there */
 int main(void)
+#include <main.h>
 {
-	printf("_putchar\n");
+	puts (print());
 	return (0);
 }
 
