@@ -2,7 +2,6 @@
 #define MAIN_H
 #include <stdlib.h>
 #include <stdio.h>
-int main(void);
 
 void print_alphabet(void){
 	char letter = 'a';
