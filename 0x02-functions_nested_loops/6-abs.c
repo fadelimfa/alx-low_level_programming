@@ -3,21 +3,16 @@
 #include <ctype.h>
 #include "main.h"
 /**
- * print_sign - Prints if alphabet or not
- * @n: is the variable
- * Return: 0 or 1
+ * _abs - Computes the absolute value of an integer.
+ * @n: The integer to compute the absolute value of.
+ *
+ * Return: The absolute value of the integer.
  */
-int _abs(n)
+int _abs(int n)
 {
-    int abs(n);
-    return (0);
-}
-#include <stdio.h>
-#include <stdlib.h>
-
-int _abs(n) {
-    int abs_num = abs(n);
-    printf("%d\n", abs_num);
-    return 0;
+    if (n < 0)
+        return (-n);
+    else
+        return (n);
 }
 
