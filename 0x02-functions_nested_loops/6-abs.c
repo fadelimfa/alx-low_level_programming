@@ -9,7 +9,7 @@
  */
 int _abs(int ab)
 {
-	double a = abs(ab);
-	printf("%d",a);
+	double d = abs(ab);
+	printf("%d",d);
 }
 
