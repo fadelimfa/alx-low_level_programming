@@ -10,6 +10,7 @@
 void print_alphabet(void)
 /*
  * print_alphabet is a function
+ * Return: oid
  */
 {
 	char c;
