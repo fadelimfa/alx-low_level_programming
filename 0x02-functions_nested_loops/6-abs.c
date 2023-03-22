@@ -7,9 +7,9 @@
  * @n: is the variable
  * Return: 0 or 1
  */
-int _abs(int ab)
+int _abs(int n)
 {
-	double d = abs(ab);
-	printf("%d",d);
+    int abs (n);
+    return (0);
 }
 
