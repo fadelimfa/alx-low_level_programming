@@ -10,5 +10,5 @@
  */
 int mul(int a, int b);
 {
-	printf("%d",a*b);;
+	printf("%20ld",a*b);;
 }
