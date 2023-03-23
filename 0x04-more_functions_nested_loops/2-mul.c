@@ -1,14 +1,13 @@
-#include "main.h"
 #include <stdio.h>
 #include <ctype.h>
-
+#include "main.h"
 /**
  * mul - check the code.
  *@a: is
  *@b: is
  * Return: Always 0.
  */
-int mul(int a, int b);
+int mul(int a, int b)
 {
-	printf("%20ld",a*b);;
+	return (a * b);
 }
