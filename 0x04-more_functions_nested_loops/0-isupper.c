@@ -1,17 +1,19 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - check the code.
- *
+ * _isupper - check the code.
+ *@c: is
  * Return: Always 0.
  */
 int _isupper(int c)
 {
 	int a = isupper(c);
-	if (a>0)
+
+	if (a > 0)
 	{
 		return (1);
-	}else
+	}
+	else
 	{
 		return (0);
 	}
