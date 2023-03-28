@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * _puts2 - check the code.
+ * puts2 - check the code.
  *@str: is
  * Return: Always 0.
  */
