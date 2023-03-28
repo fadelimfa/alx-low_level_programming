@@ -4,8 +4,8 @@
 #include <string.h>
 
 /**
- * _puts - check the code.
- *@str: is
+ * print_rev - check the code.
+ *@s: is
  * Return: Always 0.
  */
 void print_rev(char *s)
