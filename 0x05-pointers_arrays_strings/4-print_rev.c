@@ -7,21 +7,14 @@
  * print_rev - check the code.
  *@s: is
  * Return: Always 0.
- *@i: is
- *@len: is
  */
 void print_rev(char *s)
 {
-    int i, len;
+	int i, len;
 
-    /* Find the length of the string */
-    for (len = 0; s[len] != '\0'; len++)
-        ;
-
-    /* Print the string in reverse */
-    for (i = len - 1; i >= 0; i--)
-        putchar(s[i]);
-
-    /* Print a new line */
-    putchar('\n');
+	for (len = 0; s[len] != '\0'; len++)
+	;
+	for (i = len - 1; i >= 0; i--)
+	putchar(s[i])
+	putchar('\n');
 }
