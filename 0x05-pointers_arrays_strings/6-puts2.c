@@ -17,5 +17,6 @@ void puts2(char *str)
 		if(isprint(str[i]))
 			putchar(str[i]);
 	}
+	str[i] = '\0';
 	putchar('\n');
 }
