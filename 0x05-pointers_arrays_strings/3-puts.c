@@ -4,8 +4,8 @@
 #include <string.h>
 
 /**
- * puts - check the code.
- *@s: is
+ * _puts - check the code.
+ *@str: is
  * Return: Always 0.
  */
 void _puts(char *str)
