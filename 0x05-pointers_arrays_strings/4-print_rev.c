@@ -7,6 +7,8 @@
  * print_rev - check the code.
  *@s: is
  * Return: Always 0.
+ *@i: is
+ *@len: is
  */
 void print_rev(char *s)
 {
