@@ -8,7 +8,7 @@
  *@str: is
  * Return: Always 0.
  */
-void puts_half(char *str);
+void puts_half(char *str)
 {
 	int len = strlen(str);
 	int i = (len - 1) / 2;
