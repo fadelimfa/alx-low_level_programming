@@ -1,26 +1,31 @@
+#include "main.h"
 #include <stdio.h>
 #include <ctype.h>
-#include "main.h"
+#include <string.h>
+
 /**
- * print_line - check the code.
- * @n: is
+ * puts2 - check the code.
+ *@str: is
  * Return: Always 0.
  */
-void print_line(int n)
+void puts2(char *str)
 {
-	int i;
+	int i = 0;
 
-	if (n <= 0)
+	while (i >= 0)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (i = 1; i <= n; i++)
+		if (str <= 0)
 		{
-			_putchar('_');
+			putchar('\n');
+			break;
 		}
+		else
+		{
+			while (i <= str)
+			{
+				putchar('_');
+				i++;
+			}
 	}
-	_putchar('\n');
-
+	}
 }
