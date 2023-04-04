@@ -9,15 +9,19 @@
  * Return: Always 0.
  */
 void puts_half(char *str)
-{	
+{
 	int len = strlen(str);
 	int i;
 
-	if(len % 2 == 0){
+	if (len % 2 == 0)
+	{
 	i = len / 2;
 	printf("%s\n", &str[i]);
-	}else {
+	}
+	else
+	{
 	int i = (len - 1) / 2;
+
 	printf("%s\n", &str[i]);
 	}
 
