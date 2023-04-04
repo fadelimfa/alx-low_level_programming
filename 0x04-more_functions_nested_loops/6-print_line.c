@@ -4,11 +4,11 @@
 #include <string.h>
 
 /**
- * puts2 - check the code.
- *@str: is
+ * print_line - check the code.
+ *@n: is
  * Return: Always 0.
  */
-void puts2(char *str)
+void print_line(int n)
 {
 	int i = 0;
 
