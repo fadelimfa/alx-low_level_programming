@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 /**
- * factorial check the code.
+ * factorial- check the code.
  *@n: is
  * Return: .
  */
