@@ -14,7 +14,9 @@ void print_array(int *a, int n)
 	if (n == 0)
 		return;
 
-	printf("%d, ", a[0]);
+	printf("%d", *a);
+	if (n != 1)
+		printf(", ");
 
 	print_array(a + 1, n - 1);
 
