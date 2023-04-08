@@ -10,19 +10,14 @@
  */
 void puts_half(char *str)
 {
-	int len = strlen(str);
-	int i;
-
-	if (len % 2 == 0)
+	int i, len = strlen(str);
+	if (len % 2 == 0){
+		i = len / 2;
+	}else 
 	{
-	i = len / 2;
-	printf("%s\n", &str[i]);
+		i = (len + 1) / 2;
 	}
-	else
-	{
-	int i = (len - 1) / 2;
-
-	printf("%s\n", &str[i]);
-	}
-
+	for (; i < len; i++)
+		putchar(str[i]);
+	putchar('\n');
 }
