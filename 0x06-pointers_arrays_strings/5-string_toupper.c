@@ -4,12 +4,11 @@
 #include <string.h>
 
 /**
- * *_strcat - check the code.
- *@dest: is
- *@src: is
+ *string_toupper - check the code.
+ *@s: is
  * Return: Always 0.
  */
-char *string_toupper(char *)
+char *string_toupper(char *s)
 {
 	int i = 0;
 
