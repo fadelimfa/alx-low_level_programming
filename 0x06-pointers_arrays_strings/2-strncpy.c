@@ -4,9 +4,10 @@
 #include <string.h>
 
 /**
- * *_strcat - check the code.
+ * *_strncpy - check the code.
  *@dest: is
  *@src: is
+ *@n: is
  * Return: Always 0.
  */
 
