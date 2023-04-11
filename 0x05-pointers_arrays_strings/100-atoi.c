@@ -9,7 +9,7 @@
  *@s: is
  * Return: Always 0.
  */
-int _atoi(char *s)
+int _atoi(char *s) __attribute__((unused))
 {
 	char str[] = "1234";
 	int num = atoi(str);
