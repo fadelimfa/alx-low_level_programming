@@ -13,5 +13,6 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	size_t len = strspn(s, accept);
-	return (unsigned int) len;
+
+	return ((unsigned int) len);
 }
