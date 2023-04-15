@@ -7,9 +7,9 @@
  *@argv: is
  * Return: Always 0.
  */
-int main(char *argv[])
+int main(int argc, char *argv[])
 {
 	printf("%s", argv[]);
 	
-	Return(0);
+	return(0);
 }
