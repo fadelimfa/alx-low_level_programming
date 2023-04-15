@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * _isupper - check the code.
@@ -9,14 +8,8 @@
  */
 int _isupper(int c)
 {
-	int a = isupper(c);
-
-	if (a > 0)
-	{
+	if (c >= 'A' && c <= 'Z')
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }
