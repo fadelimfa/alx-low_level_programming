@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * *_memset - check the code.
+ *init_dog - check the code.
  *@d: is
  *@name: is
  *@age: is
@@ -13,7 +13,8 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (d != NULL) {
+	if (d != NULL)
+	{
 		d->name = name;
 		d->age = age;
 		d->owner = owner;
