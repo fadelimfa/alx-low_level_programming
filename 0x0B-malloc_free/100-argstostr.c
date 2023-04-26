@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * free_grid - is
- * @grid: is
- * @height: i
+ * *argstostr - is
+ * @ac: is
+ * @av: i
  * Return: 0 on success, 1 on failure
  */
 char *argstostr(int ac, char **av)
