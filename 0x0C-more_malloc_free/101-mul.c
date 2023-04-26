@@ -7,68 +7,59 @@
 
 #define MAX_DIGITS 10000
 
-void error_exit(const char* msg) {
-    fprintf(stderr, "Error: %s\n", msg);
-    exit(98);
-}
 
-int validate_number(const char* num) {
-    if (num == NULL || strlen(num) == 0)
-        return 0;
-    for (int i = 0; i < strlen(num); i++) {
-        if (!isdigit(num[i]))
-            return 0;
+void validate_number(char *num) {
+    if (num == NULL || strlen(num) == 0) {
+        printf("Error: invalid input\n");
+        exit(1);
     }
-    return 1;
+
+    for (int i = 0; i < (int)strlen(num); i++) {
+        if (num[i] < '0' || num[i] > '9') {
+            printf("Error: invalid input\n");
+            exit(1);
+        }
+    }
 }
 
-void multiply(const char* num1, const char* num2, char* result) {
+char *multiply(char *num1, char *num2) {
+    validate_number(num1);
+    validate_number(num2);
+
     int len1 = strlen(num1);
     int len2 = strlen(num2);
-    int i, j, k, carry = 0;
-    int* prod = calloc(len1 + len2, sizeof(int));
+    char *result = (char *)calloc(len1 + len2 + 1, sizeof(char));
 
-    if (prod == NULL)
-        error_exit("Out of memory");
-
-    for (i = len1 - 1; i >= 0; i--) {
-        carry = 0;
-        for (j = len2 - 1; j >= 0; j--) {
-            prod[i + j + 1] += (num1[i] - '0') * (num2[j] - '0') + carry;
-            carry = prod[i + j + 1] / 10;
-            prod[i + j + 1] %= 10;
-        }
-        prod[i + j + 1] += carry;
+    if (result == NULL) {
+        printf("Error: memory allocation failed\n");
+        exit(1);
     }
 
-    for (i = 0; i < len1 + len2; i++)
-        result[i] = prod[i] + '0';
+    for (int i = len1 - 1; i >= 0; i--) {
+        int carry = 0;
+        for (int j = len2 - 1; j >= 0; j--) {
+            int k = i + j + 1;
+            int temp = (num1[i] - '0') * (num2[j] - '0') + carry + result[k] - '0';
+            result[k] = temp % 10 + '0';
+            carry = temp / 10;
+        }
+        result[i] += carry;
+    }
 
-    result[len1 + len2] = '\0';
+    if (result[0] == '0') {
+        memmove(result, &result[1], len1 + len2);
+    }
 
-    for (i = 0; i < len1 + len2; i++)
-        if (result[i] != '0')
-            break;
-
-    if (i == len1 + len2)
-        strcpy(result, "0");
-    else
-        memmove(result, &result[i], len1 + len2 - i + 1);
-
-    free(prod);
+    return result;
 }
 
-int main(int argc, char** argv) {
-    if (argc != 3)
-        error_exit("Usage: mul num1 num2");
-
-    if (!validate_number(argv[1]) || !validate_number(argv[2]))
-        error_exit("Arguments must be positive integers");
-
+int main(void) {
+    char num1[MAX_DIGITS];
+    char num2[MAX_DIGITS];
     char result[MAX_DIGITS];
-    multiply(argv[1], argv[2], result);
-    printf("%s\n", result);
 
-    return 0;
-}
+    printf("Enter first number: ");
+    fgets(num1, MAX_DIGITS, stdin);
+    printf("Enter second number: ");
+    fgets(num2, MAX_DIGITS, stdin);
 
