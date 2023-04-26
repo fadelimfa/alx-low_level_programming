@@ -5,7 +5,7 @@
 #include <string.h>
 /**
  * free_grid - is
- * @**grid: is
+ * @grid: is
  * @height: i
  * Return: 0 on success, 1 on failure
  */
