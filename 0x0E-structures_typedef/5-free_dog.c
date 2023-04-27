@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-
+#include <stdlib.h> 
 /**
  *free_dog - check the code.
  *@d: is
