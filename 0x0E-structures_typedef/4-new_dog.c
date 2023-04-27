@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+
 /**
  * new_dog - creates a new dog
  * @name: name of the dog (will be copied)
@@ -12,30 +14,35 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+    /* declare variables at the beginning of the function */
+    int name_len, owner_len, i, j;
+
     /* allocate memory for the new dog */
     dog_t *new_dog = malloc(sizeof(dog_t));
     if (new_dog == NULL)
         return NULL;
 
     /* copy the name and owner */
-    int name_len = _strlen(name);
-    new_dog->name = malloc(sizeof(char) * (name_len + 1));
-    if (new_dog->name == NULL) {
+    name_len = strlen(name);
+    char *new_name = malloc(sizeof(char) * (name_len + 1));
+    if (new_name == NULL) {
         free(new_dog);
         return NULL;
     }
-    for (int i = 0; i <= name_len; i++)
-        new_dog->name[i] = name[i];
+    for (i = 0; i <= name_len; i++)
+        new_name[i] = name[i];
+    new_dog->name = new_name;
 
-    int owner_len = _strlen(owner);
-    new_dog->owner = malloc(sizeof(char) * (owner_len + 1));
-    if (new_dog->owner == NULL) {
+    owner_len = strlen(owner);
+    char *new_owner = malloc(sizeof(char) * (owner_len + 1));
+    if (new_owner == NULL) {
         free(new_dog->name);
         free(new_dog);
         return NULL;
     }
-    for (int i = 0; i <= owner_len; i++)
-        new_dog->owner[i] = owner[i];
+    for (j = 0; j <= owner_len; j++)
+        new_owner[j] = owner[j];
+    new_dog->owner = new_owner;
 
     /* initialize the new dog */
     new_dog->age = age;
