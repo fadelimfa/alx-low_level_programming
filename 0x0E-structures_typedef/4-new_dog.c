@@ -14,17 +14,18 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-    /* declare variables at the beginning of the function */
-    int name_len, owner_len, i, j;
-
     /* allocate memory for the new dog */
-    dog_t *new_dog = malloc(sizeof(dog_t));
+    dog_t *new_dog;
+    int name_len, owner_len, i, j;
+    char *new_name, *new_owner;
+
+    new_dog = malloc(sizeof(dog_t));
     if (new_dog == NULL)
         return NULL;
 
     /* copy the name and owner */
     name_len = strlen(name);
-    char *new_name = malloc(sizeof(char) * (name_len + 1));
+    new_name = malloc(sizeof(char) * (name_len + 1));
     if (new_name == NULL) {
         free(new_dog);
         return NULL;
@@ -34,7 +35,7 @@ dog_t *new_dog(char *name, float age, char *owner)
     new_dog->name = new_name;
 
     owner_len = strlen(owner);
-    char *new_owner = malloc(sizeof(char) * (owner_len + 1));
+    new_owner = malloc(sizeof(char) * (owner_len + 1));
     if (new_owner == NULL) {
         free(new_dog->name);
         free(new_dog);
@@ -49,20 +50,4 @@ dog_t *new_dog(char *name, float age, char *owner)
 
     /* return the new dog */
     return new_dog;
-}
-
-/* helper function */
-
-/**
- * _strlen - computes the length of a string
- * @s: the string
- *
- * Return: the length of the string
- */
-int _strlen(char *s)
-{
-    int len = 0;
-    while (s[len] != '\0')
-        len++;
-    return len;
 }
