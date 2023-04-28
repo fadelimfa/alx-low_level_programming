@@ -1,32 +1,24 @@
 #include "main.h"
-#include <stdio.h>
-#include <ctype.h>
-/**
- * prime- number
- *
- * @n: Num
- * @i: Sta
- *
- * Return: whatever
- */
+#include <string.h>
 
-int prime(int n, int i)
-{
-	if (i == 1)
-		return (1);
-	if (n % i == 0)
-		return (0);
-	return (prime(n, i - 1));
-}
 /**
- * is_prime_number- is
- * @n: is
- * Return: whatever
+ * is_palindrome - checks if a string is a palindrome
+ * @s: the string to check
+ *
+ * Return: 1 if s is a palindrome, 0 otherwise
  */
-
-int is_prime_number(int n)
+int is_palindrome(char *s)
 {
-	if (n <= 1)
-		return (0);
-	return (prime(n, n - 1));
+    size_t len = strlen(s);
+    size_t i;
+
+    for (i = 0; i < len / 2; i++)
+    {
+        if (s[i] != s[len - i - 1])
+        {
+            return 0;
+        }
+    }
+
+    return 1;
 }
