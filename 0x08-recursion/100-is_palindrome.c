@@ -1,51 +1,47 @@
 #include "main.h"
 
 /**
- * is_palindrome - checks if a string is a palindrome
- * @s: the string to check
+ * find_strlen - Returns the length of a string.
+ * @s: The string to be measured.
  *
- * Return: 1 if s is a palindrome, 0 otherwise
+ * Return: The length of the string.
  */
-int is_palindrome(char *s)
-{
-    int len = _strlen_recursion(s);
-    int index = 0;
-
-    if (len <= 1)
-        return (1);
-
-    return (_check_palindrome(s, len, index));
-}
-
-/**
- * _check_palindrome - helper function to check if a string is a palindrome
- * @s: the string to check
- * @len: the length of the string
- * @index: the current index being compared
- *
- * Return: 1 if s is a palindrome, 0 otherwise
- */
-int _check_palindrome(char *s, int len, int index)
-{
-    if (index >= len / 2)
-        return (1);
-
-    if (s[index] != s[len - index - 1])
-        return (0);
-
-    return (_check_palindrome(s, len, index + 1));
-}
-
-/**
- * _strlen_recursion - returns the length of a string
- * @s: the string to check
- *
- * Return: the length of the string
- */
-int _strlen_recursion(char *s)
+int find_strlen(char *s)
 {
     if (*s == '\0')
         return (0);
-
-    return (1 + _strlen_recursion(s + 1));
+    else
+        return (1 + find_strlen(s + 1));
 }
+
+/**
+ * check_palindrome - Checks if a string is a palindrome.
+ * @s: The string to be checked.
+ * @start: The index of the first character in the string.
+ * @end: The index of the last character in the string.
+ *
+ * Return: If the string is a palindrome - 1.
+ *         If the string is not a palindrome - 0.
+ */
+int check_palindrome(char *s, int start, int end)
+{
+    if (start >= end)
+        return (1);
+    if (s[start] != s[end])
+        return (0);
+    return (check_palindrome(s, start + 1, end - 1));
+}
+
+/**
+ * is_palindrome - Checks if a string is a palindrome.
+ * @s: The string to be checked.
+ *
+ * Return: If the string is a palindrome - 1.
+ *         If the string is not a palindrome - 0.
+ */
+int is_palindrome(char *s)
+{
+    int len = find_strlen(s);
+    return (check_palindrome(s, 0, len - 1));
+}
+
