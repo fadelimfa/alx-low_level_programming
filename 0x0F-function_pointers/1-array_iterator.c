@@ -1,23 +1,23 @@
-#include <stdio.h>
 #include "function_pointers.h"
+#include <stddef.h>
 
 /**
- * print_char_ascii - prints the ASCII value of a character
- * @c: the character to print the ASCII value of
+ * array_iterator - executes a function on each element of an array
+ * @array: the array to iterate over
+ * @size: the size of the array
+ * @action: a pointer to the function to execute on each element
  *
  * Return: Nothing.
  */
-void print_char_ascii(char c)
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
-    printf("%d\n", (int) c);
-}
+    size_t i;
 
-int main(void)
-{
-    char str[] = "hello, world!";
-    size_t str_len = sizeof(str) / sizeof(str[0]);
-
-    array_iterator(str, str_len, &print_char_ascii);
-
-    return 0;
+    if (array && action)
+    {
+        for (i = 0; i < size; i++)
+        {
+            action(array[i]);
+        }
+    }
 }
