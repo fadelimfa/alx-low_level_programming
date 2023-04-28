@@ -26,8 +26,8 @@ char **strtow(char *str)
                                 i++;
                 }
         }
-        if (words == 0) // if there are no words in the input string
-                return (NULL);
+	if (words == 0) /* if there are no words in the input string */
+		return (NULL);
         word_array = malloc(sizeof(char *) * (words + 1));
         if (word_array == NULL)
                 return (NULL);
