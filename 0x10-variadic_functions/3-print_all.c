@@ -5,18 +5,12 @@
 /**
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
- * c: char
- * i: integer
- * f: float
- * s: char * (if the string is NULL, print (nil) instead)
- * any other char should be ignored
- * Return: void
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
+	unsigned int i = 0;
 	char *str;
-	int i = 0;
 
 	va_start(args, format);
 
@@ -31,7 +25,7 @@ void print_all(const char * const format, ...)
 				printf("%d", va_arg(args, int));
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double));
+				printf("%f", (float) va_arg(args, double));
 				break;
 			case 's':
 				str = va_arg(args, char *);
@@ -45,14 +39,10 @@ void print_all(const char * const format, ...)
 		}
 
 		if (format[i + 1])
-		{
-			if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
-			    format[i] == 's')
-				printf(", ");
-		}
+			printf(", ");
 		i++;
 	}
-	printf("\n");
-	va_end(args);
-}
 
+	va_end(args);
+	printf("\n");
+}
