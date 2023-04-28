@@ -6,6 +6,7 @@ int main(int argc, char *argv[])
 	int cents, coins = 0;
 	int denominations[] = {25, 10, 5, 2, 1};
 	int num_denominations = sizeof(denominations) / sizeof(int);
+	int i;
 
 	if (argc != 2) {
 		printf("Error\n");
@@ -18,7 +19,6 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	int i;
 
 	for ( i = 0; i < num_denominations; i++) {
 		coins += cents / denominations[i];
