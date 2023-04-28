@@ -20,8 +20,8 @@ int is_palindrome(char *s)
     }
     else
     {
-        s[len - 1] = '\0';
-        return is_palindrome(&s[1]);
+        s[len - 1] = '\0'; /* temporarily terminate the string */
+        return is_palindrome(&s[1]) && 1;
     }
 }
 
