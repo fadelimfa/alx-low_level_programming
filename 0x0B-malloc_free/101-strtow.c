@@ -1,47 +1,67 @@
-#include "main.h"
-#include <stdio.h>
-#include <ctype.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
+#include "main.h"
+
 /**
- * strtow - is
- * @str: i
- * Return: 0 on success, 1 on failure
+ * strtow - Split a string into words
+ * @str: The string to split
+ *
+ * Return: A pointer to an array of strings (words), or NULL on failure
  */
 char **strtow(char *str)
 {
-	int i, j, k, len, words;
-	char **word_array;
+    char **words = NULL;
+    int i, j, k, len, count = 0;
 
-	if (str == NULL || *str == '\0')
-		return (NULL);
-	len = strlen(str);
-	words = 0;
-	for (i = 0; i < len; i++)
-	{
-		if (str[i] != ' ')
-		{
-			words++;
-		while (str[i] != ' ' && str[i] != '\0')
-			i++;
-		}
-	}
-	word_array = malloc(sizeof(char *) * (words + 1));
-	if (word_array == NULL)
-		return (NULL);
-	for (i = 0, j = 0; j < words; j++)
-	{
-	while (str[i] == ' ')
-		i++;
-	for (k = i; str[k] != ' ' && str[k] != '\0'; k++)
-		;
-	word_array[j] = malloc(sizeof(char) * (k - i + 1));
-	if (word_array[j] == NULL)
-		return (NULL);
-	strncpy(word_array[j], &str[i], k - i);
-	word_array[j][k - i] = '\0';
-		i = k;
-	}
-	word_array[j] = NULL;
-	return (word_array);
+    if (str == NULL || *str == '\0')
+        return (NULL);
+
+    len = strlen(str);
+
+    /* Allocate memory for the words array */
+    words = malloc(sizeof(char *) * (len + 1));
+    if (words == NULL)
+        return (NULL);
+
+    /* Loop through the string and split it into words */
+    for (i = 0; i < len; i++)
+    {
+        /* Skip leading spaces */
+        while (str[i] == ' ')
+            i++;
+
+        /* Break the loop if we've reached the end of the string */
+        if (i == len)
+            break;
+
+        /* Count the number of characters in the current word */
+        count = 0;
+        for (j = i; j < len && str[j] != ' '; j++)
+            count++;
+
+        /* Allocate memory for the current word */
+        words[k] = malloc(sizeof(char) * (count + 1));
+        if (words[k] == NULL)
+        {
+            /* Free memory for the words array if allocation fails */
+            for (k = k - 1; k >= 0; k--)
+                free(words[k]);
+            free(words);
+            return (NULL);
+        }
+
+        /* Copy the current word into the words array */
+        for (j = 0; j < count; j++)
+            words[k][j] = str[i + j];
+        words[k][j] = '\0';
+        k++;
+        i += count;
+    }
+
+    /* Terminate the words array with a NULL pointer */
+    words[k] = NULL;
+
+    return (words);
 }
+
