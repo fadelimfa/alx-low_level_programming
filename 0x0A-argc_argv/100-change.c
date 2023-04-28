@@ -18,8 +18,9 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
+	int i;
 
-	for (int i = 0; i < num_denominations; i++) {
+	for ( i = 0; i < num_denominations; i++) {
 		coins += cents / denominations[i];
 		cents %= denominations[i];
 	}
