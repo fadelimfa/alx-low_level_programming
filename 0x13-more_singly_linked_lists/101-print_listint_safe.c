@@ -8,41 +8,72 @@
  *
  * Return: the number of nodes in the list
  */
+/**
+ * print_listint_safe - prints a listint_t linked list, even if it has a loop
+ * @head: a pointer to the head node of the list
+ *
+ * Return: the number of nodes in the list
+ */
 size_t print_listint_safe(const listint_t *head)
 {
-    const listint_t *turtle, *hare;
+	const listint_t *tortoise, *hare, *loop_start;
+	size_t count = 0;
 
-    if (!head)
-        exit(98);
+	if (!head)
+		exit(98);
 
-    turtle = head;
-    hare = head;
+	tortoise = head;
+	hare = head;
 
-    while (turtle && hare && hare->next)
-    {
-        turtle = turtle->next;
-        hare = hare->next->next;
+	while (hare && hare->next)
+	{
+		hare = hare->next->next;
+		tortoise = tortoise->next;
+		if (hare == tortoise)
+			break;
+	}
 
-        if (turtle == hare)
-        {
-            printf("[%p] %d\n", (void *)turtle, turtle->n);
-            turtle = head;
+	if (!hare || !hare->next)
+	{
+		/* no loop */
+		for (count = 0; head; count++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+	}
+	else
+	{
+		/* there is a loop */
+		loop_start = head;
+		while (loop_start != tortoise)
+		{
+			loop_start = loop_start->next;
+			tortoise = tortoise->next;
+		}
 
-            while (turtle != hare)
-            {
-                printf("[%p] %d\n", (void *)turtle, turtle->n);
-                turtle = turtle->next;
-                hare = hare->next;
-            }
+		while (head != tortoise)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+			count++;
+		}
 
-            printf("-> [%p] %d\n", (void *)turtle, turtle->n);
+		printf("[%p] %d\n", (void *)tortoise, tortoise->n);
+		count++;
 
-            return (0);
-        }
+		tortoise = tortoise->next;
+		while (tortoise != loop_start)
+		{
+			printf("[%p] %d\n", (void *)tortoise, tortoise->n);
+			tortoise = tortoise->next;
+			count++;
+		}
 
-        printf("[%p] %d\n", (void *)turtle, turtle->n);
-    }
+		printf("-> [%p] %d\n", (void *)loop_start, loop_start->n);
+		count++;
+	}
 
-    return (0);
+	return (count);
 }
 
