@@ -4,7 +4,7 @@
 
 
 /**
- * sum_listint - returns the sum of all the data (n) of a listint_t linked list.
+ * sum_listint - retu) of a listint_t linked list.
  * @head: pointer to the first element of the list.
  *
  * Return: the sum of all the data (n) of the list.
