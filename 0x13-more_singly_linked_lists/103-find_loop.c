@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * find_listint_loop - Finds the first node in a loop in a linked list
+ * find_listint_loop - F in a loop in a linked list
  * @head: Pointer to the head of the list
  *
- * Return: Address of the node where the loop starts, or NULL if there is no loop
+ * Return: Address o starts, or NULL if there is no loop
  */
 listint_t *find_listint_loop(listint_t *head)
 {
