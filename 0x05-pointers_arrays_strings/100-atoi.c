@@ -6,7 +6,7 @@
  *    * @s: the string to use.
  *     *
  *      * Return: integer.
- *       */
+*/
 
 int _atoi(char *s)
 {
