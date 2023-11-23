@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <limits.h> 
 
 /**
  * malloc_checked - check the code.
@@ -10,7 +11,8 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	void *ptr = malloc(b);
+	int *ptr;
+	ptr = malloc(b);
 
 	if (ptr == NULL)
 	{

@@ -6,6 +6,6 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int is_valid_number(char *s);
-int main(int argc, char *argv[]);
+int main1(int argc, char *argv[]);
 
 #endif /* MAIN_H */
